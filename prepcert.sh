@@ -6,8 +6,8 @@ mkdir prep
 for d in certs/letsencrypt/live/*
 do
     n=${d##*/}
-    cat "$d/cert.pem" >  "prep/$n.pem"
-    cat "$d/chain.pem" >>  "prep/$n.pem"
+    cat "$d/fullchain.pem" >  "prep/$n.pem"
+    #cat "$d/chain.pem" >>  "prep/$n.pem"
     cat "$d/privkey.pem" >>  "prep/$n.key"
     echo "done $n"
 done
