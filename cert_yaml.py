@@ -13,12 +13,12 @@ LOGGER = logging.getLogger(__name__)
 
 def pem_to_name(n: str) -> str:
     a = n.split('.pem')[0]
-    return "%s_cert" % re.sub("\.", "_", a)
+    return "%s_cert" % re.sub("[\.-]", "_", a)
 
 
 def key_to_name(n: str) -> str:
     a = n.split('.key')[0]
-    return "%s_key" % re.sub("\.", "_", a)
+    return "%s_key" % re.sub("[\.-]", "_", a)
 
 
 def main():
